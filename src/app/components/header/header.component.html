@@ -1,0 +1,31 @@
+<header class="header-6">
+    <div class="branding">
+        <a class="logo-and-title">
+          <clr-icon shape="terminal" size="48"></clr-icon>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a href="javascript://" class="active nav-link nav-text">Terminal</a>
+        <div #terminals></div>
+        <a href="javascript://" class="nav-link nav-text" (click)="newTerminal($event)">+</a>
+    </div>
+    <div class="header-actions">
+      <div class="dropdown"  [ngClass]="{'open': settingsOpen}" (click)="settingsClicked($event)">
+        <button class="dropdown-toggle btn btn-primary" type="button">
+            Settings
+            <clr-icon shape="cog"></clr-icon>
+        </button>
+        <div class="dropdown-menu">
+            <div class="dropdown left-top" [ngClass]="{'open': settingsOpen}">
+                <button class="dropdown-item active expandable">Themes</button>
+                <div class="dropdown-menu">
+                  <button type="button" class="dropdown-item" [ngClass]="{'active': active==0}" (click)="themeChosen(0)">Black</button>
+                  <button type="button" class="dropdown-item" [ngClass]="{'active': active==1}" (click)="themeChosen(1)">Dark</button>
+                  <button type="button" class="dropdown-item" [ngClass]="{'active': active==2}" (click)="themeChosen(2)">Light</button>
+                  <button type="button" class="dropdown-item" [ngClass]="{'active': active==3}" (click)="themeChosen(3)">White</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>

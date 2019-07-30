@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'terminal-ang';
+  title = 'Terminal';
+  active = 0;
+
+  activeListener(e: any) {
+    this.active = e;
+    console.log(e);
+  }
+
 }
